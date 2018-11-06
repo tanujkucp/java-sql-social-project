@@ -51,7 +51,7 @@ public class Custmz extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("Customize your Account");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18));
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
         jLabel2.setText("Choose Your avatar");
 
@@ -124,7 +124,7 @@ public class Custmz extends javax.swing.JFrame {
         jComboBox1.setForeground(new java.awt.Color(0, 102, 102));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Singing", "Dancing", "Listening Music", "Reading", "Cooking", "Painting", "Sports" }));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Rafael-icon.png"))); // NOI18N
         jButton1.setText("OK");
@@ -188,7 +188,7 @@ public class Custmz extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel7)
@@ -377,7 +377,7 @@ public class Custmz extends javax.swing.JFrame {
                 // JOptionPane.showMessageDialog(null,""+e.getMessage() );
                 }
                 this.setVisible(false);
-                new Home().setVisible(true);
+                new Timeline().setVisible(true);
             } else if (y == JOptionPane.NO_OPTION) {
                 this.setVisible(false);
                 new LogIn().setVisible(true);

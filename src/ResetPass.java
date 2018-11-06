@@ -332,7 +332,7 @@ public class ResetPass extends javax.swing.JFrame {
                 }
 
                 this.setVisible(false);
-                new Home().setVisible(true);
+                new Timeline().setVisible(true);
             } else if (y == JOptionPane.NO_OPTION) {
                 this.setVisible(false);
                 new LogIn().setVisible(true);
