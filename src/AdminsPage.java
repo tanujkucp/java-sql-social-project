@@ -2,17 +2,6 @@
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * AdminsPage.java
- *
- * Created on Oct 18, 2015, 12:33:20 AM
- */
-
 /**
  *
  * @author tanuj
@@ -247,102 +236,106 @@ public class AdminsPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
- this.setVisible(false);
- new LogIn().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new LogIn().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-this.setVisible(false);
- new AdminAllUser().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new AdminAllUser().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int no=Integer.parseInt(jTextField9.getText());
-try{
-   String q1="Select Name, Email, Phno, Username, Password from members where Code="+no+";";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    ResultSet rs=s1.executeQuery(q1);
-    if(rs.next()){
-        String name=rs.getString("Name");
-        String user=rs.getString("Username");
-        String pass=rs.getString("Password");
-        long phno=rs.getLong("Phno");
-        String email=rs.getString("Email");
-       jTextField1.setText(""+name);
-       jTextField3.setText(""+email);
-       jTextField4.setText(""+phno);
-       jTextField8.setText(""+user);
-       jTextField2.setText(""+pass);
-       jButton2.setEnabled(true);
-    }
-    else{
-        JOptionPane.showMessageDialog(null,"No Account Exists for User Number: "+no );
-    }
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-        // TODO add your handling code here:
+        int no = Integer.parseInt(jTextField9.getText());
+        try {
+            String q1 = "Select Name, Email, Phno, Username, Password from members natural join auth where Code=" + no + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs = s1.executeQuery(q1);
+            if (rs.next()) {
+                String name = rs.getString("Name");
+                String user = rs.getString("Username");
+                String pass = rs.getString("Password");
+                long phno = rs.getLong("Phno");
+                String email = rs.getString("Email");
+                jTextField1.setText("" + name);
+                jTextField3.setText("" + email);
+                jTextField4.setText("" + phno);
+                jTextField8.setText("" + user);
+                jTextField2.setText("" + pass);
+                jButton2.setEnabled(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "No Account Exists for User Number: " + no);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-int a=JOptionPane.showConfirmDialog(null,"Are you Sure to delete this user's account?");
-if(a==JOptionPane.YES_OPTION){
-int no=Integer.parseInt(jTextField9.getText());
-try{
-   String q1="delete from members where Code="+no+";";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-    s1.close();
-jTextField9.setText("");
-jButton2.setEnabled(false);
-    String q2="Drop table arequest"+no+";";
-    String q3="Drop table srequest"+no+";";
-   String q4="Drop table friendlist"+no+";";
-String q5="Drop table liked"+no+";";
-String q6="Drop table message"+no+";";
-String q7="Drop table notif"+no+";";
-String q8="Drop table post"+no+";";
-    Statement s2=con.createStatement();
-    Statement s3=con.createStatement();
-    Statement s4=con.createStatement();
-    Statement s5=con.createStatement();
-    Statement s6=con.createStatement();
-    Statement s7=con.createStatement();
-    Statement s8=con.createStatement();
-    s2.execute(q2);
-    s2.close();
-    s3.execute(q3);
-    s3.close();
-    s4.execute(q4);
-    s4.close();
-    s5.execute(q5);
-    s5.close();
-    s6.execute(q6);
-    s6.close();
-    s7.execute(q7);
-    s7.close();
-    s8.execute(q8);
-    s8.close();
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-}
-        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null, "Are you Sure to delete this user's account?");
+        if (a == JOptionPane.YES_OPTION) {
+            int no = Integer.parseInt(jTextField9.getText());
+            try {
+                String q1 = "delete from members where Code=" + no + ";";
+                String auth = "delete from auth where code=" + no + ";";
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s1 = con.createStatement();
+                s1.executeUpdate(q1);
+                s1.close();
+                Statement s2 = con.createStatement();
+                s2.execute(auth);
+                s2.close();
+                jTextField9.setText("");
+                jButton2.setEnabled(false);
+//    String q2="Drop table arequest"+no+";";
+//    String q3="Drop table srequest"+no+";";
+//   String q4="Drop table friendlist"+no+";";
+//String q5="Drop table liked"+no+";";
+//String q6="Drop table message"+no+";";
+//String q7="Drop table notif"+no+";";
+//String q8="Drop table post"+no+";";
+//    Statement s2=con.createStatement();
+//    Statement s3=con.createStatement();
+//    Statement s4=con.createStatement();
+//    Statement s5=con.createStatement();
+//    Statement s6=con.createStatement();
+//    Statement s7=con.createStatement();
+//    Statement s8=con.createStatement();
+//    s2.execute(q2);
+//    s2.close();
+//    s3.execute(q3);
+//    s3.close();
+//    s4.execute(q4);
+//    s4.close();
+//    s5.execute(q5);
+//    s5.close();
+//    s6.execute(q6);
+//    s6.close();
+//    s7.execute(q7);
+//    s7.close();
+//    s8.execute(q8);
+//    s8.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+            }
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new AdminsPage().setVisible(true);
             }
@@ -370,5 +363,4 @@ catch(Exception e){
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
-
 }

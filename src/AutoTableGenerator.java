@@ -2,17 +2,6 @@
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * AutoTableGenerator.java
- *
- * Created on Oct 27, 2015, 4:48:18 AM
- */
-
 /**
  *
  * @author tanuj
@@ -84,101 +73,100 @@ public class AutoTableGenerator extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-System.exit(0);
-        // TODO add your handling code here:
+        System.exit(0);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-try
-{
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s1=con.createStatement();
-Statement s4=con.createStatement();
-Statement s5=con.createStatement();
-Statement s6=con.createStatement();
-Statement s7=con.createStatement();
-Statement s8=con.createStatement();
-Statement s10=con.createStatement();
-Statement s11=con.createStatement();
-Statement s13=con.createStatement();
-Statement s14=con.createStatement();
-Statement s15=con.createStatement();
-Statement s17=con.createStatement();
-Statement new1=con.createStatement();
-Statement new2=con.createStatement();
-Statement new3=con.createStatement();
-Statement new4=con.createStatement();
-Statement new5=con.createStatement();
-Statement new6=con.createStatement();
-Statement new7=con.createStatement();
-String mem="create table members(Code int primary key,Name varchar(25) not null,seccode int not null,Email varchar(30) not null,Phno bigint not null,Gender varchar(10) not null,Birthday date not null,Nickname varchar(25),Job varchar(50),Workingat varchar(50),Hobbies varchar(25),Likes int not null,Dpbig varchar(50),Dpsmall varchar(50),Accountcreated  date not null);";
-String auth="create table auth(Code int primary key,Username varchar(25) not null,Password varchar(25) not null);";
-String cu="create table session(Code int primary key);";
-String prof="create table profile(name varchar(25));";
-String sea="create table search(value varchar(50));";
-String po="create table postphoto(Serial int primary key,Value varchar(50));";
-String sen="create table sendphoto(Serial int primary key,Value varchar(50));";
-String requests="create table Requests(Serial int primary key, Sender int, Receiver int,Seen int);";
-String liked="create table Liked(Serial int primary key, Giver int, Taker int);";
-String friend="create table FriendList(Serial int primary key, User1 int, User2 int);";
-String messages="create table Messages(Serial int primary key, Value varchar(500), Sender int, Receiver int, Time time, Seen int, Kind varchar(10));";
-String notification="create table Notifications(Serial int primary key, Code int, Value varchar(100), Seen int);";
-String posts="create table Posts(Serial int primary key, Text varchar(500), Image varchar(500), Owner int, Kind varchar(10), Time time);";
-s1.execute(mem);
-s4.execute(cu);
-s5.execute(prof);
-s6.execute(sea);
-s7.execute(po);
-s8.execute(sen);
-new1.execute(auth);
-new2.execute(requests);
-new3.execute(liked);
-new4.execute(friend);
-new5.execute(messages);
-new6.execute(notification);
-new7.execute(posts);
-for(int x=1;x<=25;x++){
-   Statement s9=con.createStatement();
-   String p="insert into postphoto values("+x+",'"+x+"p');";
-   s9.executeUpdate(p);
-}
-String se1="insert into sendphoto values(1,'1s.jpg');";
-String se2="insert into sendphoto values(2,'2s.png');";
-s10.executeUpdate(se1);
-s11.executeUpdate(se2);
-for(int y=3;y<=6;y++){
-   Statement s12=con.createStatement();
-   String sa="insert into sendphoto values("+y+",'"+y+"s.jpg');";
-   s12.executeUpdate(sa);
-}
-String se3="insert into sendphoto values(7,'7s.png');";
-s13.executeUpdate(se3);
-for(int z=8;z<=22;z++){
-   Statement s16=con.createStatement();
-   String sb="insert into sendphoto values("+z+",'"+z+"s.jpg');";
-   s16.executeUpdate(sb);
-}
-String se4="insert into sendphoto values(23,'23s.png');";
-String se5="insert into sendphoto values(24,'24s.jpg');";
-String se6="insert into sendphoto values(25,'25s.png');";
-s14.executeUpdate(se4);
-s15.executeUpdate(se5);
-s17.executeUpdate(se6);
-JOptionPane.showMessageDialog(null,"All Necessary tables created in database 'tanuj' ");
-}
-catch(Exception e)
-{
- JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
-        // TODO add your handling code here:
+        try {
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            Statement s4 = con.createStatement();
+            Statement s5 = con.createStatement();
+            Statement s6 = con.createStatement();
+            Statement s7 = con.createStatement();
+            Statement s8 = con.createStatement();
+            Statement s10 = con.createStatement();
+            Statement s11 = con.createStatement();
+            Statement s13 = con.createStatement();
+            Statement s14 = con.createStatement();
+            Statement s15 = con.createStatement();
+            Statement s17 = con.createStatement();
+            Statement new1 = con.createStatement();
+            Statement new2 = con.createStatement();
+            Statement new3 = con.createStatement();
+            Statement new4 = con.createStatement();
+            Statement new5 = con.createStatement();
+            Statement new6 = con.createStatement();
+            Statement new7 = con.createStatement();
+            String mem = "create table members(Code int primary key,Name varchar(25) not null,seccode int not null,Email varchar(30) not null,Phno bigint not null,Gender varchar(10) not null,Birthday date not null,Nickname varchar(25),Job varchar(50),Workingat varchar(50),Hobbies varchar(25),Likes int not null,Dpbig varchar(50),Dpsmall varchar(50),Accountcreated  date not null);";
+            String auth = "create table auth(Code int primary key,Username varchar(25) not null,Password varchar(25) not null);";
+            String cu = "create table session(Code int primary key);";
+            String prof = "create table profile(name varchar(25));";
+            String sea = "create table search(value varchar(50));";
+            String po = "create table postphoto(Serial int primary key,Value varchar(50));";
+            String sen = "create table sendphoto(Serial int primary key,Value varchar(50));";
+            String requests = "create table Requests(Serial int primary key, Sender int, Receiver int,Seen int);";
+            String liked = "create table Liked(Serial int primary key, Giver int, Taker int);";
+            String friend = "create table FriendList(Serial int primary key, User1 int, User2 int);";
+            String messages = "create table Messages(Serial int primary key, Value varchar(500), Sender int, Receiver int, Time time, Seen int, Kind varchar(10));";
+            String notification = "create table Notifications(Serial int primary key, Code int, Value varchar(100), Seen int);";
+            String posts = "create table Posts(Serial int primary key, Text varchar(500), Image varchar(500), Owner int, Kind varchar(10), Time time);";
+            s1.execute(mem);
+            s4.execute(cu);
+            s5.execute(prof);
+            s6.execute(sea);
+            s7.execute(po);
+            s8.execute(sen);
+            new1.execute(auth);
+            new2.execute(requests);
+            new3.execute(liked);
+            new4.execute(friend);
+            new5.execute(messages);
+            new6.execute(notification);
+            new7.execute(posts);
+            for (int x = 1; x <= 25; x++) {
+                Statement s9 = con.createStatement();
+                String p = "insert into postphoto values(" + x + ",'" + x + "p');";
+                s9.executeUpdate(p);
+            }
+            String se1 = "insert into sendphoto values(1,'1s.jpg');";
+            String se2 = "insert into sendphoto values(2,'2s.png');";
+            s10.executeUpdate(se1);
+            s11.executeUpdate(se2);
+            for (int y = 3; y <= 6; y++) {
+                Statement s12 = con.createStatement();
+                String sa = "insert into sendphoto values(" + y + ",'" + y + "s.jpg');";
+                s12.executeUpdate(sa);
+            }
+            String se3 = "insert into sendphoto values(7,'7s.png');";
+            s13.executeUpdate(se3);
+            for (int z = 8; z <= 22; z++) {
+                Statement s16 = con.createStatement();
+                String sb = "insert into sendphoto values(" + z + ",'" + z + "s.jpg');";
+                s16.executeUpdate(sb);
+            }
+            String se4 = "insert into sendphoto values(23,'23s.png');";
+            String se5 = "insert into sendphoto values(24,'24s.jpg');";
+            String se6 = "insert into sendphoto values(25,'25s.png');";
+            s14.executeUpdate(se4);
+            s15.executeUpdate(se5);
+            s17.executeUpdate(se6);
+            JOptionPane.showMessageDialog(null, "All Necessary tables created in database 'tanuj' ");
+        } catch (Exception e) {
+            e.printStackTrace();
+            //JOptionPane.showMessageDialog(null, "" + e.getMessage());
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new AutoTableGenerator().setVisible(true);
             }
@@ -189,5 +177,4 @@ catch(Exception e)
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
-
 }

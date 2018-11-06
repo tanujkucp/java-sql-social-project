@@ -217,158 +217,183 @@ public class Custmz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-String code1=SignUp.jTextField9.getText();
-int code=Integer.parseInt(code1);
-jLabel7.setText(""+code);
+        String code1 = SignUp.jTextField9.getText();
+        int code = Integer.parseInt(code1);
+        jLabel7.setText("" + code);
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-String user="";
-String pass="";
-String name="";
-int code=Integer.parseInt(jLabel7.getText());
-String nick=jTextField1.getText();
-String job=jTextField2.getText();
-String work=jTextField3.getText();
-String hob=(String)jComboBox1.getSelectedItem();
-String dp1="";
-String dp2="";
-int l=jList1.getSelectedIndex();
-l++;
-switch(l){
-    case 1:dp1="1";
-    dp2="1a";
-    break;
-    case 2:dp1="2";
-    dp2="2a";
-    break;
-    case 3:dp1="3";
-    dp2="3a";
-    break;
-    case 4:dp1="4";
-    dp2="4a";
-    break;
-    case 5:dp1="5";
-    dp2="5a";
-    break;
-    case 6:dp1="6";
-    dp2="6a";
-    break;
-    case 7:dp1="7";
-    dp2="7a";
-    break;
-    case 8:dp1="8";
-    dp2="8a";
-    break;
-    case 9:dp1="9";
-    dp2="9a";
-    break;
-    case 10:dp1="10";
-    dp2="10a";
-    break;
-    case 11:dp1="11";
-    dp2="11a";
-    break;
-    case 12:dp1="12";
-    dp2="12a";
-    break;
-    case 13:dp1="13";
-    dp2="13a";
-    break;
-    case 14:dp1="14";
-    dp2="14a";
-    break;
-    case 15:dp1="15";
-    dp2="15a";
-    break;
-    case 16:dp1="16";
-    dp2="16a";
-    break;
-    case 17:dp1="17";
-    dp2="17a";
-    break;
-    case 18:dp1="18";
-    dp2="18a";
-    break;
-    case 19:dp1="19";
-    dp2="19a";
-    break;
-    case 20:dp1="20";
-    dp2="20a";
-    break;
-    case 21:dp1="21";
-    dp2="21a";
-    break;
-    case 22:dp1="22";
-    dp2="22a";
-    break;
-    case 23:dp1="23";
-    dp2="23a";
-    break;
-    case 24:dp1="24";
-    dp2="24a";
-    break;
-    case 25:dp1="25";
-    dp2="25a";
-    break;
-    default: dp1="null1";
-    dp2="null2";
-}
-try{
-   String q1="update members set Nickname='"+nick+"', Job='"+job+"', Workingat='"+work+"', Hobbies='"+hob+"', Dpbig='"+dp1+"', Dpsmall='"+dp2+"' where Code="+code+";";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-    int y=JOptionPane.showConfirmDialog(null,"<html>Account Customization Complete!<br> Do you want to Sign In to your account now?" );
-    if(y==JOptionPane.YES_OPTION){
-        /*
-        try{
-   String qu="Select Name,Username,Password from members where Code="+code+";";
-    Class.forName("java.sql.Driver");
-    Connection co=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s=co.createStatement();
-    ResultSet rs=s.executeQuery(qu);
-         rs.next();
-         user=rs.getString("Username");
-         pass=rs.getString("Password");
-         name=rs.getString("Name");
+        String user = "";
+        String pass = "";
+        String name = "";
+        int code = Integer.parseInt(jLabel7.getText());
+        String nick = jTextField1.getText();
+        String job = jTextField2.getText();
+        String work = jTextField3.getText();
+        String hob = (String) jComboBox1.getSelectedItem();
+        String dp1 = "";
+        String dp2 = "";
+        int l = jList1.getSelectedIndex();
+        l++;
+        switch (l) {
+            case 1:
+                dp1 = "1";
+                dp2 = "1a";
+                break;
+            case 2:
+                dp1 = "2";
+                dp2 = "2a";
+                break;
+            case 3:
+                dp1 = "3";
+                dp2 = "3a";
+                break;
+            case 4:
+                dp1 = "4";
+                dp2 = "4a";
+                break;
+            case 5:
+                dp1 = "5";
+                dp2 = "5a";
+                break;
+            case 6:
+                dp1 = "6";
+                dp2 = "6a";
+                break;
+            case 7:
+                dp1 = "7";
+                dp2 = "7a";
+                break;
+            case 8:
+                dp1 = "8";
+                dp2 = "8a";
+                break;
+            case 9:
+                dp1 = "9";
+                dp2 = "9a";
+                break;
+            case 10:
+                dp1 = "10";
+                dp2 = "10a";
+                break;
+            case 11:
+                dp1 = "11";
+                dp2 = "11a";
+                break;
+            case 12:
+                dp1 = "12";
+                dp2 = "12a";
+                break;
+            case 13:
+                dp1 = "13";
+                dp2 = "13a";
+                break;
+            case 14:
+                dp1 = "14";
+                dp2 = "14a";
+                break;
+            case 15:
+                dp1 = "15";
+                dp2 = "15a";
+                break;
+            case 16:
+                dp1 = "16";
+                dp2 = "16a";
+                break;
+            case 17:
+                dp1 = "17";
+                dp2 = "17a";
+                break;
+            case 18:
+                dp1 = "18";
+                dp2 = "18a";
+                break;
+            case 19:
+                dp1 = "19";
+                dp2 = "19a";
+                break;
+            case 20:
+                dp1 = "20";
+                dp2 = "20a";
+                break;
+            case 21:
+                dp1 = "21";
+                dp2 = "21a";
+                break;
+            case 22:
+                dp1 = "22";
+                dp2 = "22a";
+                break;
+            case 23:
+                dp1 = "23";
+                dp2 = "23a";
+                break;
+            case 24:
+                dp1 = "24";
+                dp2 = "24a";
+                break;
+            case 25:
+                dp1 = "25";
+                dp2 = "25a";
+                break;
+            default:
+                dp1 = "null1";
+                dp2 = "null2";
         }
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-         */
-try{
-   String q="insert into session values("+code+");";
-    Class.forName("java.sql.Driver");
-    Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s=c.createStatement();
-   s.executeUpdate(q);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-        this.setVisible(false);
-        new Home().setVisible(true);
+        try {
+            String q1 = "update members set Nickname='" + nick + "', Job='" + job + "', Workingat='" + work + "', Hobbies='" + hob + "', Dpbig='" + dp1 + "', Dpsmall='" + dp2 + "' where Code=" + code + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+            int y = JOptionPane.showConfirmDialog(null, "<html>Account Customization Complete!<br> Do you want to Sign In to your account now?");
+            if (y == JOptionPane.YES_OPTION) {
+                /*
+                try{
+                String qu="Select Name,Username,Password from members where Code="+code+";";
+                Class.forName("java.sql.Driver");
+                Connection co=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
+                Statement s=co.createStatement();
+                ResultSet rs=s.executeQuery(qu);
+                rs.next();
+                user=rs.getString("Username");
+                pass=rs.getString("Password");
+                name=rs.getString("Name");
+                }
+                catch(Exception e){
+                JOptionPane.showMessageDialog(null,""+e.getMessage() );
+                }
+                 */
+                try {
+                    String q = "insert into session values(" + code + ");";
+                    Class.forName("java.sql.Driver");
+                    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                    Statement s = c.createStatement();
+                    s.executeUpdate(q);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+                }
+                this.setVisible(false);
+                new Home().setVisible(true);
+            } else if (y == JOptionPane.NO_OPTION) {
+                this.setVisible(false);
+                new LogIn().setVisible(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
         }
-    else
-    if(y==JOptionPane.NO_OPTION){
-         this.setVisible(false);
-        new LogIn().setVisible(true);
-                                 }
-   }
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Custmz().setVisible(true);
             }
@@ -392,5 +417,4 @@ catch(Exception e){
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-
 }

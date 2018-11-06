@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */import javax.swing.DefaultListModel;
+
 import javax.swing.ImageIcon;
 
 /**
@@ -154,23 +151,24 @@ public class PostPhoto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int i=jList1.getSelectedIndex();
-i++;
-Timeline.jLabel14.setText(""+i);
-this.setVisible(false);
-        // TODO add your handling code here:
+        int i = jList1.getSelectedIndex();
+        i++;
+        Timeline.jLabel14.setText("" + i);
+        this.setVisible(false);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-this.setVisible(false);
+        this.setVisible(false);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new PostPhoto().setVisible(true);
             }
@@ -186,5 +184,4 @@ this.setVisible(false);
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
-
 }

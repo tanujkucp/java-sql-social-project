@@ -1,3 +1,4 @@
+
 import java.sql.*;
 /*
  * To change this template, choose Tools | Templates
@@ -311,213 +312,209 @@ public class Messages extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-jTextField1.requestFocus();
-String user="";
-String pass="";
-int code=0;
-String name="";
-try
-{
-String q="select code, Username,Password from session natural join auth;";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-r.next();
-user=r.getString("Username");
-pass=r.getString("Password");
-code=r.getInt("Code");
+        jTextField1.requestFocus();
+        String user = "";
+        String pass = "";
+        int code = 0;
+        String name = "";
+        try {
+            String q = "select code, Username,Password from session natural join auth;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            r.next();
+            user = r.getString("Username");
+            pass = r.getString("Password");
+            code = r.getInt("Code");
 
- jLabel11.setText(""+code);
-    jLabel12.setText(""+user);
-   
-}
-catch(Exception e)
-{
-    e.printStackTrace();
- JOptionPane.showMessageDialog(null,"Please Log in from LogIn Window!");
-}
+            jLabel11.setText("" + code);
+            jLabel12.setText("" + user);
 
-try{
-   String q1="Select Name,Dpsmall from members where code="+code+";";
-    Class.forName("java.sql.Driver");
-    Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con1.createStatement();
-    ResultSet rs1=s1.executeQuery(q1);
-    rs1.next();
-    String dp=rs1.getString("Dpsmall");
-     name=rs1.getString("Name");
- jLabel2.setText(""+name);
-    jLabel1.setIcon(new ImageIcon(""+dp+".jpg"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Please Log in from LogIn Window!");
+        }
 
-    con1.close();
-    s1.close();
-    rs1.close();
-}
-catch(Exception e){
-    e.printStackTrace();
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-int no=Integer.parseInt(jLabel11.getText());
-int mnum=0;
+        try {
+            String q1 = "Select Name,Dpsmall from members where code=" + code + ";";
+            Class.forName("java.sql.Driver");
+            Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con1.createStatement();
+            ResultSet rs1 = s1.executeQuery(q1);
+            rs1.next();
+            String dp = rs1.getString("Dpsmall");
+            name = rs1.getString("Name");
+            jLabel2.setText("" + name);
+            jLabel1.setIcon(new ImageIcon("" + dp + ".jpg"));
 
-try{
-   String q1="Select count(*) from Messages where Seen=0 and receiver="+code+";";
-    Class.forName("java.sql.Driver");
-    Connection con2=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s2=con2.createStatement();
-    ResultSet rs2=s2.executeQuery(q1);
-   rs2.next();
-    mnum=rs2.getInt("Count(*)");
+            con1.close();
+            s1.close();
+            rs1.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+        int no = Integer.parseInt(jLabel11.getText());
+        int mnum = 0;
 
-    jLabel15.setText("You have "+mnum+" new Messages.");
-    con2.close();
-    s2.close();
-    rs2.close();
-    }
-catch(Exception e){
-    e.printStackTrace();
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        try {
+            String q1 = "Select count(*) from Messages where Seen=0 and receiver=" + code + ";";
+            Class.forName("java.sql.Driver");
+            Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s2 = con2.createStatement();
+            ResultSet rs2 = s2.executeQuery(q1);
+            rs2.next();
+            mnum = rs2.getInt("Count(*)");
 
-DefaultListModel m=(DefaultListModel)jList1.getModel();
-try {
-      String q="select User2 as user, (select name from members where code=user) as Name from friendlist where user1="+code+" union select user1 as user, (select name from members where code=user) as Name from friendlist where user2="+code+";";
-      Class.forName("java.sql.Driver");
-      Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-      Statement s=con.createStatement();
-      ResultSet rs=s.executeQuery(q);
-     if(rs.next()){
-         rs.previous();
-         while(rs.next()){
-         String f=rs.getString("Name");
-         m.addElement(f);
-                     }
-     }else{
-          m.addElement("You Have No Friends!");
-          jList1.setEnabled(false);
-     }
-      jList1.setModel(m);
-      rs.close();
-      s.close();
-      con.close();
-    } catch(Exception e){
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null,""+e.getMessage());
-                        }
+            jLabel15.setText("You have " + mnum + " new Messages.");
+            con2.close();
+            s2.close();
+            rs2.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+
+        DefaultListModel m = (DefaultListModel) jList1.getModel();
+        try {
+            String q = "select User2 as user, (select name from members where code=user) as Name from friendlist where user1=" + code + " union select user1 as user, (select name from members where code=user) as Name from friendlist where user2=" + code + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(q);
+            if (rs.next()) {
+                rs.previous();
+                while (rs.next()) {
+                    String f = rs.getString("Name");
+                    m.addElement(f);
+                }
+            } else {
+                m.addElement("You Have No Friends!");
+                jList1.setEnabled(false);
+            }
+            jList1.setModel(m);
+            rs.close();
+            s.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage());
+        }
 
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-try{
-   String q1="delete from session;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-   
-        this.setVisible(false);
-         new Logout().setVisible(true);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}       // TODO add your handling code here:
+        try {
+            String q1 = "delete from session;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+
+            this.setVisible(false);
+            new Logout().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }       // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-this.setVisible(false);
-new Friends().setVisible(true);       // TODO add your handling code here:
+        this.setVisible(false);
+        new Friends().setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-this.setVisible(false);
-new Timeline().setVisible(true);         // TODO add your handling code here:
+        this.setVisible(false);
+        new Timeline().setVisible(true);         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-this.setVisible(false);
-new Notif().setVisible(true);        // TODO add your handling code here:
+        this.setVisible(false);
+        new Notif().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-this.setVisible(false);
-new Profile().setVisible(true);         // TODO add your handling code here:
+        this.setVisible(false);
+        new Profile().setVisible(true);         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-this.setVisible(false);
-new Settings().setVisible(true);        // TODO add your handling code here:
+        this.setVisible(false);
+        new Settings().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String a=jTextField1.getText();
-try{
-   String q1="insert into search values('"+a+"');";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
+        String a = jTextField1.getText();
+        try {
+            String q1 = "insert into search values('" + a + "');";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
 
-        this.setVisible(false);
-     new FriendSearch().setVisible(true);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}       // TODO add your handling code here:
+            this.setVisible(false);
+            new FriendSearch().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        //   JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }       // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-int code=Integer.parseInt(jLabel11.getText());
- int res=JOptionPane.showConfirmDialog(null,"Are You Sure to delete all Messages?");
-        if(res==JOptionPane.YES_OPTION){
+        int code = Integer.parseInt(jLabel11.getText());
+        int res = JOptionPane.showConfirmDialog(null, "Are You Sure to delete all Messages?");
+        if (res == JOptionPane.YES_OPTION) {
             try {
-                String q="Delete from Messages where sender="+code+";";
+                String q = "Delete from Messages where sender=" + code + ";";
                 Class.forName("java.sql.Driver");
-                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-                Statement s=con.createStatement();
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s = con.createStatement();
                 s.executeUpdate(q);
-                JOptionPane.showMessageDialog(null,"All Messages Deleted Successfully!");
-                 this.setVisible(false);
-               new Messages().setVisible(true);
+                JOptionPane.showMessageDialog(null, "All Messages Deleted Successfully!");
+                this.setVisible(false);
+                new Messages().setVisible(true);
                 s.close();
                 con.close();
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                //JOptionPane.showMessageDialog(null,""+e.getMessage());
+            //JOptionPane.showMessageDialog(null,""+e.getMessage());
             }
         }
 
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-this.setVisible(false);
-new NewMessage().setVisible(true);
+        this.setVisible(false);
+        new NewMessage().setVisible(true);
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
- this.setVisible(false);
-new NewArrivedMsg().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new NewArrivedMsg().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
-this.setVisible(false);
-new Chat().setVisible(true); 
+        this.setVisible(false);
+        new Chat().setVisible(true);
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jList1ValueChanged
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Messages().setVisible(true);
             }
@@ -549,5 +546,4 @@ new Chat().setVisible(true);
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
 }

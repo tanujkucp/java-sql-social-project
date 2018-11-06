@@ -1,18 +1,6 @@
 
 import java.sql.*;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * AdminAllUser.java
- *
- * Created on Oct 18, 2015, 12:57:50 AM
- */
 
 /**
  *
@@ -113,54 +101,52 @@ public class AdminAllUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-this.setVisible(false);
-new AdminsPage().setVisible(true);
+        this.setVisible(false);
+        new AdminsPage().setVisible(true);
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-DefaultTableModel m=(DefaultTableModel)jTable1.getModel();
-m.setNumRows(0);
-try
-{
-String q="Select Code, Name, Username, Password, Email, Phno, Gender, Accountcreated from members;";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
+        DefaultTableModel m = (DefaultTableModel) jTable1.getModel();
+        m.setNumRows(0);
+        try {
+            String q = "Select Code, Name, Username, Password, Email, Phno, Gender, Accountcreated from members natural join auth;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
 
-while(r.next())
-    {
-    int code=r.getInt("Code");
-    String name=r.getString("Name");
-    String user=r.getString("Username");
-    String pass=r.getString("Password");
-    String email=r.getString("Email");
-    long phno=r.getLong("Phno");
-    String gender=r.getString("Gender");
-    Date time=r.getDate("Accountcreated");
-    m.addRow(new Object[]{ code,name,user,pass,email,phno,gender,time });
-    }
-jTable1.setModel(m);
+            while (r.next()) {
+                int code = r.getInt("Code");
+                String name = r.getString("Name");
+                String user = r.getString("Username");
+                String pass = r.getString("Password");
+                String email = r.getString("Email");
+                long phno = r.getLong("Phno");
+                String gender = r.getString("Gender");
+                Date time = r.getDate("Accountcreated");
+                m.addRow(new Object[]{code, name, user, pass, email, phno, gender, time});
+            }
+            jTable1.setModel(m);
 
-r.close();
-s.close();
-con.close();
-}
-catch(Exception e)
-{
- JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+            r.close();
+            s.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+// JOptionPane.showMessageDialog(null,""+e.getMessage());
+        }
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new AdminAllUser().setVisible(true);
             }
@@ -174,5 +160,4 @@ catch(Exception e)
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
 }

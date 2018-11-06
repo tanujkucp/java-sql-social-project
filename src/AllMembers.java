@@ -1,18 +1,6 @@
 
 import java.sql.*;
 import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * AllMembers.java
- *
- * Created on Oct 18, 2015, 4:53:33 PM
- */
 
 /**
  *
@@ -128,63 +116,61 @@ public class AllMembers extends javax.swing.JFrame {
         this.setVisible(false);
         new FriendSearch().setVisible(true);
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
 }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-DefaultListModel m=(DefaultListModel)jList1.getModel();
-int num=0;
-try
-{
-String q="Select Name from members;";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-while(r.next())
-    {
-    String name=r.getString("Name");
-    m.addElement(name);
-    num++;
-    }
-r.close();
-s.close();
-con.close();
-jLabel2.setText("Total ( "+num+" ) Members Listed ");
+        DefaultListModel m = (DefaultListModel) jList1.getModel();
+        int num = 0;
+        try {
+            String q = "Select Name from members;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            while (r.next()) {
+                String name = r.getString("Name");
+                m.addElement(name);
+                num++;
+            }
+            r.close();
+            s.close();
+            con.close();
+            jLabel2.setText("Total ( " + num + " ) Members Listed ");
 
 
-}
-catch(Exception e)
-{
- JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null, "" + e.getMessage());
+        }
 
 
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
-String a=(String) jList1.getSelectedValue();
-try{
-   String q1="insert into Prof values('"+a+"');";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-     this.setVisible(false);
-     new UserInfo().setVisible(true);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}        // TODO add your handling code here:
+        String a = (String) jList1.getSelectedValue();
+        try {
+            String q1 = "insert into Profile values('" + a + "');";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+            this.setVisible(false);
+            new UserInfo().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null, "" + e.getMessage());
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_jList1ValueChanged
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new AllMembers().setVisible(true);
             }
@@ -199,5 +185,4 @@ catch(Exception e){
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-
 }

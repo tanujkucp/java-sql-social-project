@@ -1,8 +1,6 @@
 
 import java.sql.*;
-import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-
 
 /**
  *
@@ -68,7 +66,7 @@ public class SendPhoto extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jButton1.setForeground(new java.awt.Color(204, 0, 153));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/yahoo.png"))); // NOI18N
         jButton1.setText("Choose>>");
@@ -79,13 +77,13 @@ public class SendPhoto extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 51, 255));
         jLabel1.setText("Choose Stickers to Send");
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24));
         jLabel2.setForeground(new java.awt.Color(255, 51, 51));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/camera.png"))); // NOI18N
         jLabel2.setText("Gallery");
@@ -147,49 +145,49 @@ public class SendPhoto extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int num=jList1.getSelectedIndex();
-num++;
-String im="";
-try {
-      String q="Select Value from Sendphoto where Serial="+num+";";
-      Class.forName("java.sql.Driver");
-      Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-      Statement s=con.createStatement();
-      ResultSet rs=s.executeQuery(q);
-      rs.next();
-      im=rs.getString("Value");
-      Chat.jLabel7.setText(""+im);
-      this.setVisible(false);
-      rs.close();
-      s.close();
-      con.close();
-    } catch(Exception e){
-        e.printStackTrace();
-       // JOptionPane.showMessageDialog(null,""+e.getMessage());
-                        }
+        int num = jList1.getSelectedIndex();
+        num++;
+        String im = "";
+        try {
+            String q = "Select Value from Sendphoto where Serial=" + num + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(q);
+            rs.next();
+            im = rs.getString("Value");
+            Chat.jLabel7.setText("" + im);
+            this.setVisible(false);
+            rs.close();
+            s.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage());
+        }
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-this.setVisible(false);
-new Chat().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new Chat().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new SendPhoto().setVisible(true);
             }
@@ -205,5 +203,4 @@ new Chat().setVisible(true);
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
-
 }

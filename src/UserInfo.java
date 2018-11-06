@@ -226,448 +226,420 @@ public class UserInfo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-try{
-   String q1="delete from Profile;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-     this.setVisible(false);
-new Timeline().setVisible(true);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        try {
+            String q1 = "delete from Profile;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+            this.setVisible(false);
+            new Timeline().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
 
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-String nam="";
-try
-{
-String q="Select name from Profile;";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-r.next();
-nam=r.getString("name");
-}
-catch(Exception e)
-{
- JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
-jLabel5.setText(""+nam);
-String user="";
-String pass="";
-int code=0;
-String name="";
-try
-{
-String q="select Name, code, Username,Password from session natural join (auth natural join members);";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-r.next();
-user=r.getString("Username");
-pass=r.getString("Password");
-code=r.getInt("Code");
-name=r.getString("Name");
-jLabel6.setText(""+code);
-jLabel7.setText(""+name);
-}
-catch(Exception e)
-{
-    e.printStackTrace();
- JOptionPane.showMessageDialog(null,"Please Log in from LogIn Window!");
-}
-int c=0;
-try{
-   String q1="Select Email,Phno,Dpbig,Likes,Code from members where Name='"+nam+"';";
-    Class.forName("java.sql.Driver");
-    Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con1.createStatement();
-    ResultSet rs1=s1.executeQuery(q1);
-    rs1.next();
-String email=rs1.getString("Email");
-long phno=rs1.getLong("Phno");
-int likes=rs1.getInt("Likes");
- c=rs1.getInt("Code");
-jLabel8.setText(""+c);
-    String dp=rs1.getString("Dpbig");
-    jLabel11.setIcon(new ImageIcon(""+dp+".jpg"));
-jTextField4.setText(""+email);
-jTextField5.setText(""+phno);
-jLabel3.setText(""+likes);
-    con1.close();
-    s1.close();
-    rs1.close();
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-try
-{
- String q1="Select Serial from Friendlist where (User1="+code+" and User2="+c+") or (User2="+code+" and User1="+c+");";
- String q2="Select Serial from requests where Receiver="+c+" and Sender="+code+";";
- String q3="Select Serial from requests where Receiver="+code+" and Sender="+c+";";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q1);
-Statement s2=con.createStatement();
-ResultSet r2=s2.executeQuery(q2);
-Statement s3=con.createStatement();
-ResultSet r3=s3.executeQuery(q3);
-if(r.next()){
-    jButton1.setText("Unfriend");
-}else{
-    
-if(r2.next()){
-    jButton1.setText("Delete Sent Request");
-}else{
-    
-if(r3.next()){
-    jButton1.setText("Accept Request");
-}else{
-    jButton1.setText("Send Friend Request");
-}
-}
-}
-}
-catch(Exception e)
-{
- JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+        String nam = "";
+        try {
+            String q = "Select name from Profile;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            r.next();
+            nam = r.getString("name");
+        } catch (Exception e) {
+            e.printStackTrace();
+// JOptionPane.showMessageDialog(null,""+e.getMessage());
+        }
+        jLabel5.setText("" + nam);
+        String user = "";
+        String pass = "";
+        int code = 0;
+        String name = "";
+        try {
+            String q = "select Name, code, Username,Password from session natural join (auth natural join members);";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            r.next();
+            user = r.getString("Username");
+            pass = r.getString("Password");
+            code = r.getInt("Code");
+            name = r.getString("Name");
+            jLabel6.setText("" + code);
+            jLabel7.setText("" + name);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Please Log in from LogIn Window!");
+        }
+        int c = 0;
+        try {
+            String q1 = "Select Email,Phno,Dpbig,Likes,Code from members where Name='" + nam + "';";
+            Class.forName("java.sql.Driver");
+            Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con1.createStatement();
+            ResultSet rs1 = s1.executeQuery(q1);
+            rs1.next();
+            String email = rs1.getString("Email");
+            long phno = rs1.getLong("Phno");
+            int likes = rs1.getInt("Likes");
+            c = rs1.getInt("Code");
+            jLabel8.setText("" + c);
+            String dp = rs1.getString("Dpbig");
+            jLabel11.setIcon(new ImageIcon("" + dp + ".jpg"));
+            jTextField4.setText("" + email);
+            jTextField5.setText("" + phno);
+            jLabel3.setText("" + likes);
+            con1.close();
+            s1.close();
+            rs1.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+        try {
+            String q1 = "Select Serial from Friendlist where (User1=" + code + " and User2=" + c + ") or (User2=" + code + " and User1=" + c + ");";
+            String q2 = "Select Serial from requests where Receiver=" + c + " and Sender=" + code + ";";
+            String q3 = "Select Serial from requests where Receiver=" + code + " and Sender=" + c + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q1);
+            Statement s2 = con.createStatement();
+            ResultSet r2 = s2.executeQuery(q2);
+            Statement s3 = con.createStatement();
+            ResultSet r3 = s3.executeQuery(q3);
+            if (r.next()) {
+                jButton1.setText("Unfriend");
+            } else {
 
-if(code==c){
-    jButton1.setEnabled(false);
-}
-try
-{
-String q1="Select Serial from Liked where Giver="+code+" and Taker="+c+";";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s1=con.createStatement();
-ResultSet rs=s1.executeQuery(q1);
-if(rs.next()){
-   jLabel4.setText("This Profile is Liked by You!");
-}
-}
-catch(Exception e)
-{
- JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
-        // TODO add your handling code here:
+                if (r2.next()) {
+                    jButton1.setText("Delete Sent Request");
+                } else {
+
+                    if (r3.next()) {
+                        jButton1.setText("Accept Request");
+                    } else {
+                        jButton1.setText("Send Friend Request");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "An error occurred!");
+        }
+
+        if (code == c) {
+            jButton1.setEnabled(false);
+        }
+        try {
+            String q1 = "Select Serial from Liked where Giver=" + code + " and Taker=" + c + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs = s1.executeQuery(q1);
+            if (rs.next()) {
+                jLabel4.setText("This Profile is Liked by You!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+// JOptionPane.showMessageDialog(null,""+e.getMessage());
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-String name=jLabel7.getText();
-int c=Integer.parseInt(jLabel8.getText());
-String nam=jLabel5.getText();
-int code=Integer.parseInt(jLabel6.getText());
-int l=Integer.parseInt(jLabel3.getText());
-l++;
-try
-{
-    int se=0;
-String q1="Select Serial from Liked where Giver="+code+" and Taker="+c+";";
-String q="update members set Likes="+l+" where Code="+c+";";
-String q2="Select Serial from Liked;";
+        String name = jLabel7.getText();
+        int c = Integer.parseInt(jLabel8.getText());
+        String nam = jLabel5.getText();
+        int code = Integer.parseInt(jLabel6.getText());
+        int l = Integer.parseInt(jLabel3.getText());
+        l++;
+        try {
+            int se = 0;
+            String q1 = "Select Serial from Liked where Giver=" + code + " and Taker=" + c + ";";
+            String q = "update members set Likes=" + l + " where Code=" + c + ";";
+            String q2 = "Select Serial from Liked;";
 
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s1=con.createStatement();
-ResultSet rs=s1.executeQuery(q1);
-if(rs.next()){
-   JOptionPane.showMessageDialog(null,"Profile Already Liked!"); 
-}
-else if(code==c){
-      JOptionPane.showMessageDialog(null,"Its your profile!");
-}
-else{
-Statement s=con.createStatement();
-s.executeUpdate(q);
-try{
-Statement s2=con.createStatement();
-ResultSet rs1=s2.executeQuery(q2);
-rs1.last();
-se=rs1.getInt("Serial");
-}catch(Exception e){
-    e.printStackTrace();
-}
-se++;
-String q3="insert into Liked values("+se+","+code+","+c+");";
-String qu2="Select Serial from Notifications;";
-int not1=0;
-Statement s3=con.createStatement();
-s3.executeUpdate(q3);
-Statement s4=con.createStatement();
-ResultSet rs4=s4.executeQuery(qu2);
-      rs4.last();
-      not1=rs4.getInt("Serial");
-      not1++;
-String qu6="insert into Notifications values("+not1+","+c+",'"+name+" liked your profile.',0);";
-Statement s6=con.createStatement();
-s6.executeUpdate(qu6);   
-this.setVisible(false);
-new UserInfo().setVisible(true);
-}
-}
-catch(Exception e)
-{
-    e.printStackTrace();
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs = s1.executeQuery(q1);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Profile Already Liked!");
+            } else if (code == c) {
+                JOptionPane.showMessageDialog(null, "Its your profile!");
+            } else {
+                Statement s = con.createStatement();
+                s.executeUpdate(q);
+                try {
+                    Statement s2 = con.createStatement();
+                    ResultSet rs1 = s2.executeQuery(q2);
+                    rs1.last();
+                    se = rs1.getInt("Serial");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                se++;
+                String q3 = "insert into Liked values(" + se + "," + code + "," + c + ");";
+                String qu2 = "Select Serial from Notifications;";
+                int not1 = 0;
+                Statement s3 = con.createStatement();
+                s3.executeUpdate(q3);
+                Statement s4 = con.createStatement();
+                ResultSet rs4 = s4.executeQuery(qu2);
+                rs4.last();
+                not1 = rs4.getInt("Serial");
+                not1++;
+                String qu6 = "insert into Notifications values(" + not1 + "," + c + ",'" + name + " liked your profile.',0);";
+                Statement s6 = con.createStatement();
+                s6.executeUpdate(qu6);
+                this.setVisible(false);
+                new UserInfo().setVisible(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
 // JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+        }
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-String nam=jLabel5.getText();
-String name=jLabel7.getText();
-int c=Integer.parseInt(jLabel8.getText());
-int code=Integer.parseInt(jLabel6.getText());
-String a=jButton1.getText();
-if(a.equals("Unfriend")){
-   // int not1=0;
-    int not2=0;
- try
-{
-String q1="delete from Friendlist where (User1="+code+" and User2="+c+") or (User2="+code+" and User1="+c+");";
+        String nam = jLabel5.getText();
+        String name = jLabel7.getText();
+        int c = Integer.parseInt(jLabel8.getText());
+        int code = Integer.parseInt(jLabel6.getText());
+        String a = jButton1.getText();
+        if (a.equals("Unfriend")) {
+            // int not1=0;
+            int not2 = 0;
+            try {
+                String q1 = "delete from Friendlist where (User1=" + code + " and User2=" + c + ") or (User2=" + code + " and User1=" + c + ");";
 //String q2="delete from Friendlist"+c+" where Code="+code+";";
-String qu4="Select Serial from Notifications;";
+                String qu4 = "Select Serial from Notifications;";
 //String qu2="Select Serial from Notif"+code+";";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-s.executeUpdate(q1);
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s = con.createStatement();
+                s.executeUpdate(q1);
 //Statement s1=con.createStatement();
 //s1.executeUpdate(q2);
 //Statement s2=con.createStatement();
-Statement s4=con.createStatement();
+                Statement s4 = con.createStatement();
 //ResultSet rs2=s2.executeQuery(qu2);
-    //  rs2.last();
-      //not1=rs2.getInt("Serial");
-      //not1++;
-      ResultSet rs4=s4.executeQuery(qu4);
-      rs4.last();
-      not2=rs4.getInt("Serial");
-      not2++;
-String qu5="insert into Notifications values("+not2+","+code+",'You Unfriended "+nam+".',0);";
-Statement s5=con.createStatement();
-s5.executeUpdate(qu5);
-not2++;
-String qu6="insert into Notifications values("+not2+","+c+",'"+name+" Unfriended You.',0);";
-Statement s6=con.createStatement();
-s6.executeUpdate(qu6);
+                //  rs2.last();
+                //not1=rs2.getInt("Serial");
+                //not1++;
+                ResultSet rs4 = s4.executeQuery(qu4);
+                rs4.last();
+                not2 = rs4.getInt("Serial");
+                not2++;
+                String qu5 = "insert into Notifications values(" + not2 + "," + code + ",'You Unfriended " + nam + ".',0);";
+                Statement s5 = con.createStatement();
+                s5.executeUpdate(qu5);
+                not2++;
+                String qu6 = "insert into Notifications values(" + not2 + "," + c + ",'" + name + " Unfriended You.',0);";
+                Statement s6 = con.createStatement();
+                s6.executeUpdate(qu6);
 
-JOptionPane.showMessageDialog(null,nam+" Unfriended Successfully!");
-this.setVisible(false);
-new UserInfo().setVisible(true);
-}
-catch(Exception e)
-{
-    e.printStackTrace();
- //JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
-}
-else
-if(a.equals("Delete Sent Request")){
-   // int not1=0;
-    int not2=0;
-   try
-{
-String q1="delete from requests where sender="+code+" and receiver="+c+";";
+                JOptionPane.showMessageDialog(null, nam + " Unfriended Successfully!");
+                this.setVisible(false);
+                new UserInfo().setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            //JOptionPane.showMessageDialog(null,""+e.getMessage());
+            }
+        } else if (a.equals("Delete Sent Request")) {
+            // int not1=0;
+            int not2 = 0;
+            try {
+                String q1 = "delete from requests where sender=" + code + " and receiver=" + c + ";";
 //String q2="delete from Arequest"+c+" where Sender='"+name+"';";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-s.executeUpdate(q1);
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s = con.createStatement();
+                s.executeUpdate(q1);
 //Statement s1=con.createStatement();
 //s1.executeUpdate(q2);
-String qu4="Select Serial from Notifications;";
+                String qu4 = "Select Serial from Notifications;";
 //String qu2="Select Serial from Notif"+code+";";
 //Statement s2=con.createStatement();
-Statement s4=con.createStatement();
+                Statement s4 = con.createStatement();
 //ResultSet rs2=s2.executeQuery(qu2);
 //      rs2.last();
 //      not1=rs2.getInt("Serial");
 //      not1++;
-      ResultSet rs4=s4.executeQuery(qu4);
-      rs4.last();
-      not2=rs4.getInt("Serial");
-      not2++;
-String qu5="insert into Notifications values("+not2+","+code+",'You deleted Friend Request sent to "+nam+".',0);";
-Statement s5=con.createStatement();
-s5.executeUpdate(qu5);
-not2++;
-String qu6="insert into Notifications values("+not2+","+c+",'"+name+" deleted Friend Request sent to You.',0);";
-Statement s6=con.createStatement();
-s6.executeUpdate(qu6);
-JOptionPane.showMessageDialog(null,"Friend Request Deleted!");
-this.setVisible(false);
-new UserInfo().setVisible(true);
-}
-catch(Exception e)
-{e.printStackTrace();
+                ResultSet rs4 = s4.executeQuery(qu4);
+                rs4.last();
+                not2 = rs4.getInt("Serial");
+                not2++;
+                String qu5 = "insert into Notifications values(" + not2 + "," + code + ",'You deleted Friend Request sent to " + nam + ".',0);";
+                Statement s5 = con.createStatement();
+                s5.executeUpdate(qu5);
+                not2++;
+                String qu6 = "insert into Notifications values(" + not2 + "," + c + ",'" + name + " deleted Friend Request sent to You.',0);";
+                Statement s6 = con.createStatement();
+                s6.executeUpdate(qu6);
+                JOptionPane.showMessageDialog(null, "Friend Request Deleted!");
+                this.setVisible(false);
+                new UserInfo().setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
 // JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
-}
-else
-if(a.equals("Accept Request")){
-    int se1=0;
-    // int se2=0;
-      int not1=0;
-      // int not2=0;
-        try{
-   String qu1="Select Serial from Friendlist;";
-      //String qu3="Select Serial from Friendlist"+c+";";
-      Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-         ResultSet rs1=s1.executeQuery(qu1);
-    rs1.last();
-    se1=rs1.getInt("Serial");
-      se1++;
+            }
+        } else if (a.equals("Accept Request")) {
+            int se1 = 0;
+            // int se2=0;
+            int not1 = 0;
+            // int not2=0;
+            try {
+                String qu1 = "Select Serial from Friendlist;";
+                //String qu3="Select Serial from Friendlist"+c+";";
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s1 = con.createStatement();
+                ResultSet rs1 = s1.executeQuery(qu1);
+                rs1.last();
+                se1 = rs1.getInt("Serial");
+                se1++;
 //            Statement s3=con.createStatement();
 //         ResultSet rs3=s3.executeQuery(qu3);
 //    rs3.last();
 //    se2=rs3.getInt("Serial");
 //      se2++;
-           }
-catch(Exception e){
-    e.printStackTrace();
-    }
-try{
-   String qu1="insert into Friendlist values("+se1+","+code+","+c+");";
-  // String qu2="insert into Friendlist"+c+" values("+se2+","+code+",'"+name+"');";
-    Class.forName("java.sql.Driver");
-    Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con1.createStatement();
-    s1.executeUpdate(qu1);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                String qu1 = "insert into Friendlist values(" + se1 + "," + code + "," + c + ");";
+                // String qu2="insert into Friendlist"+c+" values("+se2+","+code+",'"+name+"');";
+                Class.forName("java.sql.Driver");
+                Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s1 = con1.createStatement();
+                s1.executeUpdate(qu1);
 //    Statement s2=con1.createStatement();
 //    s2.executeUpdate(qu2);
-    String qa="Select Serial from Notifications;";
-    // String qb="Select Serial from Notif"+c+";";
-      Statement sa=con1.createStatement();
-      // Statement sb=con1.createStatement();
-     ResultSet rs2=sa.executeQuery(qa);
-      rs2.last();
-    not1=rs2.getInt("Serial");
-      not1++;
+                String qa = "Select Serial from Notifications;";
+                // String qb="Select Serial from Notif"+c+";";
+                Statement sa = con1.createStatement();
+                // Statement sb=con1.createStatement();
+                ResultSet rs2 = sa.executeQuery(qa);
+                rs2.last();
+                not1 = rs2.getInt("Serial");
+                not1++;
 //     ResultSet rs4=sb.executeQuery(qb);
 //      rs4.last();
 //    not2=rs4.getInt("Serial");
 //      not2++;
-    String qu5="insert into Notifications values("+not1+","+code+",'"+nam+" is now your Friend.',0);";
-    Statement s5=con1.createStatement();
-    s5.executeUpdate(qu5);
-    not1++;
-    String qu6="insert into Notifications values("+not1+","+c+",'"+name+" accepted your Friend Request.',0);";
-    Statement s6=con1.createStatement();
-    s6.executeUpdate(qu6);
-    String q1="delete from requests where Receiver="+code+" and Sender="+c+";";
-    //String q2="delete from Arequest"+code+" where Sender='"+nam+"';";
-      Statement s=con1.createStatement();
-      s.executeUpdate(q1);
+                String qu5 = "insert into Notifications values(" + not1 + "," + code + ",'" + nam + " is now your Friend.',0);";
+                Statement s5 = con1.createStatement();
+                s5.executeUpdate(qu5);
+                not1++;
+                String qu6 = "insert into Notifications values(" + not1 + "," + c + ",'" + name + " accepted your Friend Request.',0);";
+                Statement s6 = con1.createStatement();
+                s6.executeUpdate(qu6);
+                String q1 = "delete from requests where Receiver=" + code + " and Sender=" + c + ";";
+                //String q2="delete from Arequest"+code+" where Sender='"+nam+"';";
+                Statement s = con1.createStatement();
+                s.executeUpdate(q1);
 //      Statement sc=con1.createStatement();
 //      sc.executeUpdate(q2);
-    con1.close();
-    s1.close();
-  //  s2.close();
-    JOptionPane.showMessageDialog(null,"Friend Request Accepted!");
-    this.setVisible(false);
-new UserInfo().setVisible(true);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-}
-else
-if(a.equals("Send Friend Request")){
-    int se1=0;
-     //int se2=0;
-     // int not1=0;
-      int not2=0;
-        try{
-   String qu1="Select Serial from requests;";
-  //  String qu3="Select Serial from Arequest"+c+";";
-      Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-          ResultSet rs1=s1.executeQuery(qu1);
-    rs1.last();
-    se1=rs1.getInt("Serial");
-      se1++;
+                con1.close();
+                s1.close();
+                //  s2.close();
+                JOptionPane.showMessageDialog(null, "Friend Request Accepted!");
+                this.setVisible(false);
+                new UserInfo().setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+            }
+        } else if (a.equals("Send Friend Request")) {
+            int se1 = 0;
+            //int se2=0;
+            // int not1=0;
+            int not2 = 0;
+            try {
+                String qu1 = "Select Serial from requests;";
+                //  String qu3="Select Serial from Arequest"+c+";";
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s1 = con.createStatement();
+                ResultSet rs1 = s1.executeQuery(qu1);
+                rs1.last();
+                se1 = rs1.getInt("Serial");
+                se1++;
 //             Statement s3=con.createStatement();
 //         ResultSet rs3=s3.executeQuery(qu3);
 //    rs3.last();
 //    se2=rs3.getInt("Serial");
 //      se2++;
-           }
-catch(Exception e){
-    e.printStackTrace();
-   }
-try
-{
-String qu4="Select Serial from Notifications;";
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                String qu4 = "Select Serial from Notifications;";
 //String qu2="Select Serial from Notif"+code+";";
-String q1="insert into requests values("+se1+","+code+","+c+",0);";
+                String q1 = "insert into requests values(" + se1 + "," + code + "," + c + ",0);";
 //String q2="insert into Arequest"+c+" values("+se2+",'"+name+"',0);";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-s.executeUpdate(q1);
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s = con.createStatement();
+                s.executeUpdate(q1);
 //Statement s1=con.createStatement();
 //s1.executeUpdate(q2);
-Statement s2=con.createStatement();
-Statement s4=con.createStatement();
+                Statement s2 = con.createStatement();
+                Statement s4 = con.createStatement();
 //ResultSet rs2=s2.executeQuery(qu2);
 //      rs2.last();
 //      not1=rs2.getInt("Serial");
 //      not1++;
-      ResultSet rs4=s4.executeQuery(qu4);
-      rs4.last();
-      not2=rs4.getInt("Serial");
+                ResultSet rs4 = s4.executeQuery(qu4);
+                rs4.last();
+                not2 = rs4.getInt("Serial");
 
-}
-catch(Exception e)
-{e.printStackTrace();
- }
-      try{
-          not2++;
-          Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    String qu5="insert into Notifications values("+not2+","+code+",'You sent a friend Request to "+nam+"',0);";
-    Statement s5=con.createStatement();
-    s5.executeUpdate(qu5);
-    not2++;
-    String qu6="insert into Notifications values("+not2+","+c+",'"+name+" sent you a Friend Request.',0);";
-    Statement s6=con.createStatement();
-    s6.executeUpdate(qu6);
-    JOptionPane.showMessageDialog(null,"Friend Request Sent!");
-    this.setVisible(false);
-    new UserInfo().setVisible(true);
-      }catch(Exception e){
-          e.printStackTrace();
-      }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                not2++;
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                String qu5 = "insert into Notifications values(" + not2 + "," + code + ",'You sent a friend Request to " + nam + "',0);";
+                Statement s5 = con.createStatement();
+                s5.executeUpdate(qu5);
+                not2++;
+                String qu6 = "insert into Notifications values(" + not2 + "," + c + ",'" + name + " sent you a Friend Request.',0);";
+                Statement s6 = con.createStatement();
+                s6.executeUpdate(qu6);
+                JOptionPane.showMessageDialog(null, "Friend Request Sent!");
+                this.setVisible(false);
+                new UserInfo().setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
 
-}
+        }
 
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new UserInfo().setVisible(true);
             }
@@ -692,5 +664,4 @@ Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
-
 }

@@ -31,8 +31,6 @@ public class LogIn extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
@@ -47,7 +45,7 @@ public class LogIn extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/herzconnect.jpg"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24));
         jLabel2.setForeground(new java.awt.Color(255, 0, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pyNVUg5EM0j.png"))); // NOI18N
@@ -85,7 +83,7 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 51));
         jLabel5.setText("Forgot Password?");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,19 +101,6 @@ public class LogIn extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-
-        jLabel7.setFont(new java.awt.Font("Algerian", 3, 24));
-        jLabel7.setForeground(new java.awt.Color(102, 0, 204));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Po-2-icon.png"))); // NOI18N
-        jLabel7.setText("<html><u>About Developer?");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Shrek-2-icon.png"))); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel9.setForeground(new java.awt.Color(0, 0, 255));
@@ -142,41 +127,41 @@ public class LogIn extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(120, 120, 120)
-                            .addComponent(jButton1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(108, 108, 108)
-                            .addComponent(jLabel5))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jPasswordField1)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(120, 120, 120)
+                                        .addComponent(jButton1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jPasswordField1)
+                                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                            .addComponent(jLabel9)
+                            .addGap(88, 88, 88)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addGap(56, 56, 56))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,24 +183,14 @@ public class LogIn extends javax.swing.JFrame {
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel9)))
-                .addGap(77, 77, 77))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addGap(195, 195, 195)
+                        .addComponent(jLabel9))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(456, Short.MAX_VALUE)
+                .addContainerGap(388, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(189, 189, 189))
         );
@@ -224,158 +199,151 @@ public class LogIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-this.setVisible(false);
-new ResetPass().setVisible(true);
+        this.setVisible(false);
+        new ResetPass().setVisible(true);
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-this.setVisible(false);
-new SignUp().setVisible(true);
+        this.setVisible(false);
+        new SignUp().setVisible(true);
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-String a=JOptionPane.showInputDialog(null,"Enter Administrator Password");
-try{
-   String q1="Select Password from auth where Username='tanuj';";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    ResultSet rs=s1.executeQuery(q1);
-    rs.next();
-        String p=rs.getString("Password");
-        if(a.equals(p)){
-            JOptionPane.showMessageDialog(null,"WelCome Administrator!");
-             this.setVisible(false);
-            new AdminsPage().setVisible(true);
-        }else{
-          this.setVisible(false);
-            new WrongPass().setVisible(true);
+        String a = JOptionPane.showInputDialog(null, "Enter Administrator Password");
+        try {
+            String q1 = "Select Password from auth where Username='tanuj';";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs = s1.executeQuery(q1);
+            rs.next();
+            String p = rs.getString("Password");
+            if (a.equals(p)) {
+                JOptionPane.showMessageDialog(null, "WelCome Administrator!");
+                this.setVisible(false);
+                new AdminsPage().setVisible(true);
+            } else {
+                this.setVisible(false);
+                new WrongPass().setVisible(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        // this.setVisible(false);
+        // new WrongPass().setVisible(true);
         }
-    }
-catch(Exception e){
-    e.printStackTrace();
-    this.setVisible(false);
-   new WrongPass().setVisible(true);
-}
     }//GEN-LAST:event_jLabel9MouseClicked
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-this.setVisible(false);
-new Developer().setVisible(true);
-// TODO add your handling code here:
-    }//GEN-LAST:event_jLabel7MouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-try{
-   String q1="delete from session;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-    }
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-String user=jTextField1.getText();
-String pass=new String(jPasswordField1.getPassword());
-int Code=0;
-//String name="";
-try{
-   String q1="Select Code, Password from auth where Username='"+user+"';";
-    Class.forName("java.sql.Driver");
-     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    ResultSet rs=s1.executeQuery(q1);
-
-    if(rs.next()){
-       Code=rs.getInt("Code");
-        String p=rs.getString("Password");
-       // name=rs.getString("Name");
-        if(pass.equals(p)){
-            try{
-   String q="insert into session values("+Code+");";
-    Class.forName("java.sql.Driver");
-     Connection co=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s=co.createStatement();
-   s.executeUpdate(q);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null,"<html><h1>*****Welcome*****</h1></html>" );
-            new Home().setVisible(true);
-        }else{
-            this.setVisible(false);
-            new WrongPass().setVisible(true);
+        try {
+            String q1 = "delete from session;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
         }
-    }
-    else{
-        JOptionPane.showMessageDialog(null,"No Account Exists for Username: "+user );
-    }
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-try{
-   String q1="delete from search;";
-    Class.forName("java.sql.Driver");
-     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-   Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-    }
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        String user = jTextField1.getText();
+        String pass = new String(jPasswordField1.getPassword());
+        int Code = 0;
+//String name="";
+        try {
+            String q1 = "Select Code, Password from auth where Username='" + user + "';";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs = s1.executeQuery(q1);
+
+            if (rs.next()) {
+                Code = rs.getInt("Code");
+                String p = rs.getString("Password");
+                // name=rs.getString("Name");
+                if (pass.equals(p)) {
+                    try {
+                        String q = "insert into session values(" + Code + ");";
+                        Class.forName("java.sql.Driver");
+                        Connection co = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                        Statement s = co.createStatement();
+                        s.executeUpdate(q);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+                    }
+                    this.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "<html><h1>*****Welcome*****</h1></html>");
+                    new Home().setVisible(true);
+                } else {
+                    this.setVisible(false);
+                    new WrongPass().setVisible(true);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No Account Exists for Username: " + user);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+        try {
+            String q1 = "delete from search;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-try{
-   String q1="delete from session;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-    JOptionPane.showMessageDialog(null,"<html><h1><font color=blue>I Hope You Enjoyed Using this App!");
-        System.exit(0);
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        try {
+            String q1 = "delete from session;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+            JOptionPane.showMessageDialog(null, "<html><h1><font color=blue>I Hope You Enjoyed Using this App!");
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
 
-try{
-   String q1="delete from search;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-     
-}
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        try {
+            String q1 = "delete from search;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
 
-        // TODO add your handling code here:
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-jTextField1.requestFocus();
-        // TODO add your handling code here:
+        jTextField1.requestFocus();
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-jPasswordField1.requestFocus();        // TODO add your handling code here:
+        jPasswordField1.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new LogIn().setVisible(true);
             }
@@ -391,11 +359,8 @@ jPasswordField1.requestFocus();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public static javax.swing.JPasswordField jPasswordField1;
     public static javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
 }

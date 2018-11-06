@@ -3,12 +3,6 @@
  * and open the template in the editor.
  */
 
-/*
- * Logout.java
- *
- * Created on Oct 23, 2015, 11:55:22 AM
- */
-
 /**
  *
  * @author tanuj
@@ -91,16 +85,17 @@ public class Logout extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-this.setVisible(false);
-new LogIn().setVisible(true);
+        this.setVisible(false);
+        new LogIn().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Logout().setVisible(true);
             }
@@ -113,5 +108,4 @@ new LogIn().setVisible(true);
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
-
 }

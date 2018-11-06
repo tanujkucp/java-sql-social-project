@@ -1,10 +1,10 @@
+
 import java.sql.*;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -137,113 +137,104 @@ public class FriendSearch extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-DefaultListModel m=(DefaultListModel)jList1.getModel();
-String value="";
-try
-{
-String q="Select value from search;";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-r.next();
-value=r.getString("Value");
+        DefaultListModel m = (DefaultListModel) jList1.getModel();
+        String value = "";
+        try {
+            String q = "Select value from search;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            r.next();
+            value = r.getString("Value");
 
-}
-catch(Exception e)
-{
-    e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
 // JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+        }
 
-jLabel1.setText("Search Results for '"+value+"'");
-int num=0;
-try
-{
-String q="Select Name from members where Name like'%"+value+"%';";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-if(r.next()){
-    r.previous();
-while(r.next())
-    {
-    String name=r.getString("Name");
-    m.addElement(name);
-    num++;
-    }
-jList1.setModel(m);
-r.close();
-s.close();
-con.close();
-jLabel2.setText("Total ( "+num+" ) Results Found ");
+        jLabel1.setText("Search Results for '" + value + "'");
+        int num = 0;
+        try {
+            String q = "Select Name from members where Name like'%" + value + "%';";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            if (r.next()) {
+                r.previous();
+                while (r.next()) {
+                    String name = r.getString("Name");
+                    m.addElement(name);
+                    num++;
+                }
+                jList1.setModel(m);
+                r.close();
+                s.close();
+                con.close();
+                jLabel2.setText("Total ( " + num + " ) Results Found ");
 
-}
-else{
-JOptionPane.showMessageDialog(null,"No such Members Found!");
-jList1.setEnabled(false);
-}
+            } else {
+                JOptionPane.showMessageDialog(null, "No such Members Found!");
+                jList1.setEnabled(false);
+            }
 
-}
-catch(Exception e)
-{
-    e.printStackTrace();
- //JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+        } catch (Exception e) {
+            e.printStackTrace();
+        //JOptionPane.showMessageDialog(null,""+e.getMessage());
+        }
 
 
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-try{
-   String q1="delete from search;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-     this.setVisible(false);
-new Home().setVisible(true);
-}
-catch(Exception e){
-    e.printStackTrace();
-  //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        try {
+            String q1 = "delete from search;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+            this.setVisible(false);
+            new Home().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-this.setVisible(false);
-new AllMembers().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new AllMembers().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
-String a=(String) jList1.getSelectedValue();
-try{
-   String q1="insert into Profile values('"+a+"');";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-     this.setVisible(false);
-     new UserInfo().setVisible(true);
-}
-catch(Exception e){
-    e.printStackTrace();
-  //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-        // TODO add your handling code here:
+        String a = (String) jList1.getSelectedValue();
+        try {
+            String q1 = "insert into Profile values('" + a + "');";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            s1.executeUpdate(q1);
+            this.setVisible(false);
+            new UserInfo().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_jList1ValueChanged
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new FriendSearch().setVisible(true);
             }
@@ -259,5 +250,4 @@ catch(Exception e){
     public static javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-
 }
