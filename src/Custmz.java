@@ -367,11 +367,17 @@ public class Custmz extends javax.swing.JFrame {
                 }
                  */
                 try {
+                    String del="delete from session;";
                     String q = "insert into session values(" + code + ");";
                     Class.forName("java.sql.Driver");
                     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
                     Statement s = c.createStatement();
                     s.executeUpdate(q);
+                    Statement s2=c.createStatement();
+                    s2.execute(del);
+                    s.close();
+                    s2.close();
+                    c.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                 // JOptionPane.showMessageDialog(null,""+e.getMessage() );

@@ -596,7 +596,7 @@ public class Friends extends javax.swing.JFrame {
         // s2.close();
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "" + e.getMessage());
+        // JOptionPane.showMessageDialog(null, "" + e.getMessage());
         }
 
     // TODO add your handling code here:
@@ -662,7 +662,7 @@ public class Friends extends javax.swing.JFrame {
 
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "" + e.getMessage());
+        //  JOptionPane.showMessageDialog(null, "" + e.getMessage());
         }
 
     // TODO add your handling code here:
@@ -693,7 +693,8 @@ public class Friends extends javax.swing.JFrame {
             s1.close();
             rs1.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "" + e.getMessage());
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null, "" + e.getMessage());
         }
 
     // TODO add your handling code here:
@@ -743,7 +744,8 @@ public class Friends extends javax.swing.JFrame {
             this.setVisible(false);
             new UserInfo().setVisible(true);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "" + e.getMessage());
+            e.printStackTrace();
+        //  JOptionPane.showMessageDialog(null, "" + e.getMessage());
         }      // TODO add your handling code here:
     }//GEN-LAST:event_jList2ValueChanged
 

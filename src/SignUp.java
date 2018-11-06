@@ -391,7 +391,7 @@ public class SignUp extends javax.swing.JFrame {
 
         if (pass1.equals(pass2)) {
             try {
-                String q1 = "insert into members(Code,Name,Seccode,Email,Phno,Gender,Birthday,Likes,Accountcreated) values(" + code + ",'" + name + "'," + seccode + ",'" + email + "'," + phno + ",'" + gender + "','" + birth + "',1,curdate());";
+                String q1 = "insert into members(Code,Name,Seccode,Email,Phno,Gender,Birthday,Likes,Accountcreated) values(" + code + ",'" + name + "'," + seccode + ",'" + email + "'," + phno + ",'" + gender + "','" + birth + "',0,curdate());";
                 String auth = "insert into auth(Code,Username,Password) values(" + code + ",'" + user + "','" + pass1 + "');";
                 Class.forName("java.sql.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
