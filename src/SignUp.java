@@ -240,59 +240,61 @@ public class SignUp extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1)
-                        .addComponent(jTextField2)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField4)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jRadioButton1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                                            .addComponent(jRadioButton2)
-                                            .addGap(22, 22, 22)))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(195, 195, 195)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(126, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(207, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(13, 13, 13)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextField1)
+                                        .addComponent(jTextField2)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel7)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jTextField4)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                            .addComponent(jRadioButton1)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                                                            .addComponent(jRadioButton2)
+                                                            .addGap(22, 22, 22)))))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField5, jTextField6});
@@ -300,9 +302,9 @@ public class SignUp extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -343,127 +345,126 @@ public class SignUp extends javax.swing.JFrame {
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-int s=0;
-try{
-   String q1="Select Code from members;";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    ResultSet rs=s1.executeQuery(q1);
-    rs.last();
-    s=rs.getInt("Code");
-      s++;
-      jTextField9.setText(""+s);
-   }
-catch(Exception e){
-    e.printStackTrace();
-    jTextField9.setText("1");
-}
-        // TODO add your handling code here:
+        int s = 0;
+        try {
+            String q1 = "Select Code from members;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs = s1.executeQuery(q1);
+            rs.last();
+            s = rs.getInt("Code");
+            s++;
+            jTextField9.setText("" + s);
+        } catch (Exception e) {
+            e.printStackTrace();
+            jTextField9.setText("1");
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int code=Integer.parseInt(jTextField9.getText());
-String name=jTextField1.getText()+" "+jTextField2.getText();
-String email=jTextField3.getText()+"@"+jComboBox1.getSelectedItem();
-long phno=Long.parseLong(jTextField4.getText());
-String gender="";
-if(jRadioButton1.isSelected()){
-    gender="Male";
-}else{
-     gender="Female";
-}
-String birth=jTextField7.getText()+"-"+jTextField6.getText()+"-"+jTextField5.getText();
-String user=jTextField8.getText();
-String pass1=new String(jPasswordField1.getPassword());
-String pass2=new String(jPasswordField2.getPassword());
-int seccode=0;
-Random a=new Random();
-seccode=a.nextInt(10000);
+        int code = Integer.parseInt(jTextField9.getText());
+        String name = jTextField1.getText() + " " + jTextField2.getText();
+        String email = jTextField3.getText() + "@" + jComboBox1.getSelectedItem();
+        long phno = Long.parseLong(jTextField4.getText());
+        String gender = "";
+        if (jRadioButton1.isSelected()) {
+            gender = "Male";
+        } else {
+            gender = "Female";
+        }
+        String birth = jTextField7.getText() + "-" + jTextField6.getText() + "-" + jTextField5.getText();
+        String user = jTextField8.getText();
+        String pass1 = new String(jPasswordField1.getPassword());
+        String pass2 = new String(jPasswordField2.getPassword());
+        int seccode = 0;
+        Random a = new Random();
+        seccode = a.nextInt(10000);
 
-if(pass1.equals(pass2))
-{
-try{
-    String q1="insert into members(Code,Name,Seccode,Email,Phno,Gender,Birthday,Likes,Accountcreated) values("+code+",'"+name+"',"+seccode+",'"+email+"',"+phno+",'"+gender+"','"+birth+"',1,curdate());";
-    String auth="insert into auth(Code,Username,Password) values("+code+",'"+user+"','"+pass1+"');";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    s1.executeUpdate(q1);
-    s1.close();
-    /*
-    String q2="create table Post"+code+"(Serial int primary key, Text varchar(500) not null, Image varchar(500), Owner varchar(25) not null, Kind varchar(10) not null, Time time, Seen int not null);";
-    String q3="create table Srequest"+code+"(Serial int primary key, Reciever varchar(25) not null);";
-    String q4="create table Arequest"+code+"(Serial int primary key, Sender varchar(25) not null, Seen int not null);";
-    String q5="create table Friendlist"+code+"(Serial int primary key, Code int, Name varchar(25) not null);";
-    String q6="create table Liked"+code+"(Serial int primary key, Name varchar(25) not null);";
-    String q7="create table Message"+code+"(Serial int primary key, Value varchar(500) not null, Sender varchar(25) not null, Reciever varchar(25) not null, Time time, Seen int not null, Kind varchar(10) not null);";
-    String q8="create table Notif"+code+"(Serial int primary key, Value varchar(100) not null, Seen int not null);";
-    */
-    Statement s2=con.createStatement();
-    /*
-    Statement s3=con.createStatement();
-    Statement s4=con.createStatement();
-    Statement s5=con.createStatement();
-    Statement s6=con.createStatement();
-    Statement s7=con.createStatement();
-    Statement s8=con.createStatement();
-    Statement s9=con.createStatement();
-    Statement s10=con.createStatement();
-    Statement s11=con.createStatement();
-    Statement s12=con.createStatement();
-     */
-    s2.execute(auth);
-    s2.close();
-   
-    /*
-    String p="insert into Post"+code+" values(0,'Welcome to the posting Platform of this AppLication!','null','"+name+"','text',mid(now(),12),1);";
-    String m="insert into Message"+code+" values(0,'Welcome to the Messaging Platform of this AppLication!','"+name+"','"+name+"',mid(now(),12),1,'text');";
-    String n="insert into Notif"+code+" values(0,'Account Created!',1);";
-    s9.executeUpdate(p);
-    s9.close();
-    s10.executeUpdate(m);
-    s10.close();
-    s11.executeUpdate(n);
-    s11.close();
-    String l="insert into Liked"+code+" values(0,'"+name+"');";
-    s12.executeUpdate(l);
-    s12.close();
-     */
-   }
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
-JOptionPane.showMessageDialog(null,"<html>Accoount Created!<br>With Username: "+user+"<br>Password: "+pass1+"<br>Security Code: "+seccode);
-    this.setVisible(false);
-    new Custmz().setVisible(true);
-}
-else{
- JOptionPane.showMessageDialog(null,"Re-type Password Correctly! ");
-}
+        if (pass1.equals(pass2)) {
+            try {
+                String q1 = "insert into members(Code,Name,Seccode,Email,Phno,Gender,Birthday,Likes,Accountcreated) values(" + code + ",'" + name + "'," + seccode + ",'" + email + "'," + phno + ",'" + gender + "','" + birth + "',0,curdate());";
+                String auth = "insert into auth(Code,Username,Password) values(" + code + ",'" + user + "','" + pass1 + "');";
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s1 = con.createStatement();
+                s1.executeUpdate(q1);
+                s1.close();
+                /*
+                String q2="create table Post"+code+"(Serial int primary key, Text varchar(500) not null, Image varchar(500), Owner varchar(25) not null, Kind varchar(10) not null, Time time, Seen int not null);";
+                String q3="create table Srequest"+code+"(Serial int primary key, Reciever varchar(25) not null);";
+                String q4="create table Arequest"+code+"(Serial int primary key, Sender varchar(25) not null, Seen int not null);";
+                String q5="create table Friendlist"+code+"(Serial int primary key, Code int, Name varchar(25) not null);";
+                String q6="create table Liked"+code+"(Serial int primary key, Name varchar(25) not null);";
+                String q7="create table Message"+code+"(Serial int primary key, Value varchar(500) not null, Sender varchar(25) not null, Reciever varchar(25) not null, Time time, Seen int not null, Kind varchar(10) not null);";
+                String q8="create table Notif"+code+"(Serial int primary key, Value varchar(100) not null, Seen int not null);";
+                 */
+                Statement s2 = con.createStatement();
+                /*
+                Statement s3=con.createStatement();
+                Statement s4=con.createStatement();
+                Statement s5=con.createStatement();
+                Statement s6=con.createStatement();
+                Statement s7=con.createStatement();
+                Statement s8=con.createStatement();
+                Statement s9=con.createStatement();
+                Statement s10=con.createStatement();
+                Statement s11=con.createStatement();
+                Statement s12=con.createStatement();
+                 */
+                s2.execute(auth);
+                s2.close();
+
+                /*
+                String p="insert into Post"+code+" values(0,'Welcome to the posting Platform of this AppLication!','null','"+name+"','text',mid(now(),12),1);";
+                String m="insert into Message"+code+" values(0,'Welcome to the Messaging Platform of this AppLication!','"+name+"','"+name+"',mid(now(),12),1,'text');";
+                String n="insert into Notif"+code+" values(0,'Account Created!',1);";
+                s9.executeUpdate(p);
+                s9.close();
+                s10.executeUpdate(m);
+                s10.close();
+                s11.executeUpdate(n);
+                s11.close();
+                String l="insert into Liked"+code+" values(0,'"+name+"');";
+                s12.executeUpdate(l);
+                s12.close();
+                 */
+                JOptionPane.showMessageDialog(null, "<html>Accoount Created!<br>With Username: " + user + "<br>Password: " + pass1 + "<br>Security Code: " + seccode);
+                this.setVisible(false);
+                new Custmz().setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "An error occurred!");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Re-type Password Correctly! ");
+        }
 
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
- this.setVisible(false);
- new LogIn().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new LogIn().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jLabel14MouseClicked
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new SignUp().setVisible(true);
             }
@@ -506,5 +507,4 @@ else{
     private javax.swing.JTextField jTextField8;
     public static javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
-
 }

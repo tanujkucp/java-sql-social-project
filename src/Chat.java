@@ -52,7 +52,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 51, 51));
         jLabel2.setOpaque(true);
 
@@ -74,7 +74,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel3.setOpaque(true);
         jScrollPane1.setViewportView(jLabel3);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 51, 51));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/untitled1.png"))); // NOI18N
         jButton4.setText("Delete All Chats");
@@ -89,7 +89,7 @@ public class Chat extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Enter Text:");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesBTDE7PYK.png"))); // NOI18N
         jButton1.setText("Send>>");
@@ -100,7 +100,7 @@ public class Chat extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 0, 153));
         jRadioButton1.setSelected(true);
         jRadioButton1.setText("Send Text");
@@ -119,7 +119,7 @@ public class Chat extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 153));
 
         jLabel8.setText("Selected Sticker is");
@@ -131,6 +131,9 @@ public class Chat extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,7 +142,7 @@ public class Chat extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                                 .addComponent(jButton4))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel5)
@@ -149,28 +152,29 @@ public class Chat extends javax.swing.JFrame {
                                 .addGap(117, 117, 117))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                                .addComponent(jButton1)
-                                .addGap(182, 182, 182))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)))
+                        .addGap(94, 94, 94))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jRadioButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)))
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,195 +186,180 @@ public class Chat extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(6, 6, 6))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jLabel8))
-                                .addGap(29, 29, 29))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton2)
+                            .addComponent(jLabel8))
+                        .addGap(18, 18, 18))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    int c=0;
+    int c = 0;
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-String n=(String)Messages.jList1.getSelectedValue();
-jLabel2.setText(""+n);
-String user="";
-String pass="";
-int code=0;
-String name="";
-try
-{
-String q="select Name, code, Username,Password from session natural join (auth natural join members);";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-r.next();
-user=r.getString("Username");
-pass=r.getString("Password");
-code=r.getInt("Code");
- name=r.getString("Name");
- jLabel5.setText(""+code);
- jLabel6.setText(""+name);
-}
-catch(Exception e)
-{
-    e.printStackTrace();
- JOptionPane.showMessageDialog(null,"Please Log in from LogIn Window!");
-}
-try{
-   String q1="Select Code,Dpsmall from members where Name='"+n+"';";
-    Class.forName("java.sql.Driver");
-    Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con1.createStatement();
-    ResultSet rs1=s1.executeQuery(q1);
-    rs1.next();
-        String dp=rs1.getString("Dpsmall");
-        c=rs1.getInt("Code");
-        jLabel1.setIcon(new ImageIcon(""+dp+".jpg"));
-       con1.close();
-    s1.close();
-    rs1.close();
-}
-catch(Exception e){
-    e.printStackTrace();
-    JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        String n = (String) Messages.jList1.getSelectedValue();
+        jLabel2.setText("" + n);
+        String user = "";
+        String pass = "";
+        int code = 0;
+        String name = "";
+        try {
+            String q = "select Name, code, Username,Password from session natural join (auth natural join members);";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            r.next();
+            user = r.getString("Username");
+            pass = r.getString("Password");
+            code = r.getInt("Code");
+            name = r.getString("Name");
+            jLabel5.setText("" + code);
+            jLabel6.setText("" + name);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Please Log in from LogIn Window!");
         }
-try{
-    String output="<html>";
-   String q1="Select * from Messages where (Sender="+code+" and Receiver="+c+") or (Sender="+c+" and Receiver="+code+");";
-    Class.forName("java.sql.Driver");
-    Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con1.createStatement();
-    ResultSet rs1=s1.executeQuery(q1);
-    while(rs1.next()){
-        String value=rs1.getString("Value");
-        int sender=rs1.getInt("Sender");
-        int rec=rs1.getInt("Receiver");
-        String kind=rs1.getString("Kind");
-        Time t=rs1.getTime("Time");
-        if(kind.equals("text")){
-            value=value;
-        }else{
-            value="<img src='file:/E:/ChatApp/"+value+"'>";
+        try {
+            String q1 = "Select Code,Dpsmall from members where Name='" + n + "';";
+            Class.forName("java.sql.Driver");
+            Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con1.createStatement();
+            ResultSet rs1 = s1.executeQuery(q1);
+            rs1.next();
+            String dp = rs1.getString("Dpsmall");
+            c = rs1.getInt("Code");
+            jLabel1.setIcon(new ImageIcon("" + dp + ".jpg"));
+            con1.close();
+            s1.close();
+            rs1.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "" + e.getMessage());
         }
-         if(sender==code){
-            output=output+"<font color=blue>You: "+value+"</font><font size=2>("+t+")</font><br>";
-         }
-         else{
-            output=output+n+": "+value+"<font size=2>("+t+")</font><br>";
+        try {
+            String output = "<html>";
+            String q1 = "Select * from Messages where (Sender=" + code + " and Receiver=" + c + ") or (Sender=" + c + " and Receiver=" + code + ");";
+            Class.forName("java.sql.Driver");
+            Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con1.createStatement();
+            ResultSet rs1 = s1.executeQuery(q1);
+            while (rs1.next()) {
+                String value = rs1.getString("Value");
+                int sender = rs1.getInt("Sender");
+                int rec = rs1.getInt("Receiver");
+                String kind = rs1.getString("Kind");
+                Time t = rs1.getTime("Time");
+                if (kind.equals("text")) {
+                    value = value;
+                } else {
+                    value = "<img src='file:/E:/ChatApp/" + value + "'>";
+                }
+                if (sender == code) {
+                    output = output + "<font color=blue>You: " + value + "</font><font size=2>(" + t + ")</font><br>";
+                } else {
+                    output = output + n + ": " + value + "<font size=2>(" + t + ")</font><br>";
+                }
+            }
+            jLabel3.setText("" + output);
+            con1.close();
+            s1.close();
+            rs1.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        //JOptionPane.showMessageDialog(null,""+e.getMessage() );
         }
-    }
-jLabel3.setText(""+output);
-    con1.close();
-    s1.close();
-    rs1.close();
-}
-catch(Exception e){
-    e.printStackTrace();
-    //JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        try {
+            String q2 = "update Messages set Seen=1 where Seen=0 and (Sender=" + c + " and Receiver=" + code + ");";
+            Class.forName("java.sql.Driver");
+            Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s2 = con2.createStatement();
+            s2.executeUpdate(q2);
+            con2.close();
+            s2.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
         }
-try{
-    String q2="update Messages set Seen=1 where Seen=0 and (Sender="+c+" and Receiver="+code+");";
-    Class.forName("java.sql.Driver");
-    Connection con2=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s2=con2.createStatement();
-    s2.executeUpdate(q2);
-    con2.close();
-    s2.close();
-        }
-catch(Exception e){
-    e.printStackTrace();
-   // JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
 // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-this.setVisible(false);
-new Messages().setVisible(true);
+        this.setVisible(false);
+        new Messages().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-String name2=jLabel2.getText();
-int code=Integer.parseInt(jLabel5.getText());
-int res=JOptionPane.showConfirmDialog(null,"Are You Sure to clear this chat?");
-        if(res==JOptionPane.YES_OPTION){
+        String name2 = jLabel2.getText();
+        int code = Integer.parseInt(jLabel5.getText());
+        int res = JOptionPane.showConfirmDialog(null, "Are You Sure to clear this chat?");
+        if (res == JOptionPane.YES_OPTION) {
             try {
-                String q="Delete from Messages where Sender="+code+" and Receiver="+c+";";
+                String q = "Delete from Messages where Sender=" + code + " and Receiver=" + c + ";";
                 Class.forName("java.sql.Driver");
-                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-                Statement s=con.createStatement();
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                Statement s = con.createStatement();
                 s.executeUpdate(q);
-                JOptionPane.showMessageDialog(null,"Chat cleared Successfully!");
-                 this.setVisible(false);
-               new Chat().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Chat cleared Successfully!");
+                this.setVisible(false);
+                new Chat().setVisible(true);
                 s.close();
                 con.close();
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                //JOptionPane.showMessageDialog(null,""+e.getMessage());
+            //JOptionPane.showMessageDialog(null,""+e.getMessage());
             }
         }
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton2ItemStateChanged
-if(jRadioButton2.isSelected()){
-    jButton1.setEnabled(true);
-    new SendPhoto().setVisible(true);
-}
-        // TODO add your handling code here:
+        if (jRadioButton2.isSelected()) {
+            jButton1.setEnabled(true);
+            new SendPhoto().setVisible(true);
+        }
+    // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-String msg="";
-String kind="";
-        if(jRadioButton1.isSelected()){
-      msg=jTextField1.getText();
-      kind="text";
-}else{
-    msg=jLabel7.getText();
-    kind="both";
-}
-String name1=jLabel6.getText();
-String name2=jLabel2.getText();
-int code1=Integer.parseInt(jLabel5.getText());
-int code2=c;
-int se1=0;
-int se2=0;
+        String msg = "";
+        String kind = "";
+        if (jRadioButton1.isSelected()) {
+            msg = jTextField1.getText();
+            kind = "text";
+        } else {
+            msg = jLabel7.getText();
+            kind = "both";
+        }
+        String name1 = jLabel6.getText();
+        String name2 = jLabel2.getText();
+        int code1 = Integer.parseInt(jLabel5.getText());
+        int code2 = c;
+        int se1 = 0;
+        int se2 = 0;
 //try{
 //   String q1="Select Code from members where Name='"+name2+"';";
 //    Class.forName("java.sql.Driver");
@@ -387,56 +376,55 @@ int se2=0;
 //    JOptionPane.showMessageDialog(null,""+e.getMessage() );
 //}
 
-try{
-    String q1="Select Serial from Messages;";
-   // String q3="Select Serial from Message"+code2+";";
-    Class.forName("java.sql.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con.createStatement();
-    ResultSet rs1=s1.executeQuery(q1);
-    rs1.last();
-    se1=rs1.getInt("Serial");
-    se1++;
+        try {
+            String q1 = "Select Serial from Messages;";
+            // String q3="Select Serial from Message"+code2+";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con.createStatement();
+            ResultSet rs1 = s1.executeQuery(q1);
+            rs1.last();
+            se1 = rs1.getInt("Serial");
+            se1++;
 //    Statement s3=con.createStatement();
 //    ResultSet rs3=s3.executeQuery(q3);
 //    rs3.last();
 //    se2=rs3.getInt("Serial");
 //    se2++;
-           }
-catch(Exception e){
-    e.printStackTrace();
-   // JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
 
-try{
-   String q1="insert into Messages values("+se1+",'"+msg+"',"+code1+","+code2+",mid(now(),12),0,'"+kind+"');";
-  // String q2="insert into Message"+code2+" values("+se2+",'"+msg+"','"+name1+"','"+name2+"',mid(now(),12),0,'"+kind+"');";
-    Class.forName("java.sql.Driver");
-    Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-    Statement s1=con1.createStatement();
-    s1.executeUpdate(q1);
+        try {
+            String q1 = "insert into Messages values(" + se1 + ",'" + msg + "'," + code1 + "," + code2 + ",mid(now(),12),0,'" + kind + "');";
+            // String q2="insert into Message"+code2+" values("+se2+",'"+msg+"','"+name1+"','"+name2+"',mid(now(),12),0,'"+kind+"');";
+            Class.forName("java.sql.Driver");
+            Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s1 = con1.createStatement();
+            s1.executeUpdate(q1);
 //    Statement s2=con1.createStatement();
 //    s2.executeUpdate(q2);
-    JOptionPane.showMessageDialog(null,"Message Sent Successfully!");
-    this.setVisible(false);
-    new Chat().setVisible(true);
-    con1.close();
-    s1.close();
-   // s2.close();
-}
-catch(Exception e){
-    e.printStackTrace();
-   // JOptionPane.showMessageDialog(null,""+e.getMessage() );
-}
+            JOptionPane.showMessageDialog(null, "Message Sent Successfully!");
+            this.setVisible(false);
+            new Chat().setVisible(true);
+            con1.close();
+            s1.close();
+        // s2.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        // JOptionPane.showMessageDialog(null,""+e.getMessage() );
+        }
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Chat().setVisible(true);
             }
@@ -462,5 +450,4 @@ catch(Exception e){
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
 }

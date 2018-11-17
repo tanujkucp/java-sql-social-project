@@ -56,7 +56,7 @@ public class FullDetails extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14));
         jButton2.setForeground(new java.awt.Color(102, 0, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bac.jpg"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -76,10 +76,13 @@ public class FullDetails extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel3))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(545, 545, 545)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -96,119 +99,111 @@ public class FullDetails extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addGap(99, 99, 99)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-this.setVisible(false);
-new Friends().setVisible(true);
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new Friends().setVisible(true);
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-String user="";
-String pass="";
-int code=0;
-String name="";
-try
-{
-String q="select code, Username,Password from session natural join auth;";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-r.next();
-user=r.getString("Username");
-pass=r.getString("Password");
-code=r.getInt("Code");
+        String user = "";
+        String pass = "";
+        int code = 0;
+        String name = "";
+        try {
+            String q = "select code, Username,Password from session natural join auth;";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            r.next();
+            user = r.getString("Username");
+            pass = r.getString("Password");
+            code = r.getInt("Code");
 // name=r.getString("Name");
- jLabel3.setText(""+code);
+            jLabel3.setText("" + code);
 
- }
-catch(Exception e)
-{
-    e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
 // JOptionPane.showMessageDialog(null,"Please Log in from LogIn Window!");
-}
+        }
 
 
-DefaultTableModel m=(DefaultTableModel)jTable1.getModel();
-m.setNumRows(0);
-try
-{
-String q="select User2 as user from friendlist where user1="+code+" union select user1 as user from friendlist where user2="+code+";";
-Class.forName("java.sql.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s=con.createStatement();
-ResultSet r=s.executeQuery(q);
-if(r.next()){
-    r.previous();
-    while(r.next())
-    {
-    int c=r.getInt("user");
-    String nam="";
-     String email="";
-      String gender="";
-       Date birth = null;
-       long phno=0;
-       String nick="";
-       String job="";
-    try{
-    String q1="Select Name, Birthday, Nickname, Email, Phno, Gender, Job from members where Code="+c+";";
-Class.forName("java.sql.Driver");
-Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj","root","123");
-Statement s1=con1.createStatement();
-ResultSet r1=s1.executeQuery(q1);
-        r1.next();
-    nam=r1.getString("Name");
-          email=r1.getString("Email");
-     phno=r1.getLong("Phno");
-    gender=r1.getString("Gender");
-     birth=r1.getDate("Birthday");
-     nick=r1.getString("Nickname");
-      job=r1.getString("Job");
-    }catch(Exception f){
-        f.printStackTrace();
-      // JOptionPane.showMessageDialog(null,""+f.getMessage());
-    }
-    m.addRow(new Object[]{ nam,email,phno,gender,birth,nick,job });
-    }
-jTable1.setModel(m);
+        DefaultTableModel m = (DefaultTableModel) jTable1.getModel();
+        m.setNumRows(0);
+        try {
+            String q = "select User2 as user from friendlist where user1=" + code + " union select user1 as user from friendlist where user2=" + code + ";";
+            Class.forName("java.sql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+            Statement s = con.createStatement();
+            ResultSet r = s.executeQuery(q);
+            if (r.next()) {
+                r.previous();
+                while (r.next()) {
+                    int c = r.getInt("user");
+                    String nam = "";
+                    String email = "";
+                    String gender = "";
+                    Date birth = null;
+                    long phno = 0;
+                    String nick = "";
+                    String job = "";
+                    try {
+                        String q1 = "Select Name, Birthday, Nickname, Email, Phno, Gender, Job from members where Code=" + c + ";";
+                        Class.forName("java.sql.Driver");
+                        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/tanuj", "root", "123");
+                        Statement s1 = con1.createStatement();
+                        ResultSet r1 = s1.executeQuery(q1);
+                        r1.next();
+                        nam = r1.getString("Name");
+                        email = r1.getString("Email");
+                        phno = r1.getLong("Phno");
+                        gender = r1.getString("Gender");
+                        birth = r1.getDate("Birthday");
+                        nick = r1.getString("Nickname");
+                        job = r1.getString("Job");
+                    } catch (Exception f) {
+                        f.printStackTrace();
+                    // JOptionPane.showMessageDialog(null,""+f.getMessage());
+                    }
+                    m.addRow(new Object[]{nam, email, phno, gender, birth, nick, job});
+                }
+                jTable1.setModel(m);
 
-}
-else{
-   JOptionPane.showMessageDialog(null,"You don't have any Friends!");
-}
-r.close();
-s.close();
-con.close();
-}
-catch(Exception e)
-{
-    e.printStackTrace();
+            } else {
+                JOptionPane.showMessageDialog(null, "You don't have any Friends!");
+            }
+            r.close();
+            s.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
 // JOptionPane.showMessageDialog(null,""+e.getMessage());
-}
+        }
 
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new FullDetails().setVisible(true);
             }
@@ -223,5 +218,4 @@ catch(Exception e)
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
 }
